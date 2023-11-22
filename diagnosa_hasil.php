@@ -211,7 +211,9 @@
                                                     ?>
                                                     <b><?php echo $k['alt_inisial']; ?> - <?php echo $k['alt_nama']; ?></b>
                                                     <span class="text-primary">(<?php echo round($persen, 2) . "%"; ?>)</span>
-                                                    <img class="img-fluid rounded mt-2 w-75" src="images/penyakit/<?php echo $k['img_penyakit']; ?>" alt="">
+                                                    <a href="images/penyakit/<?= $k["img_penyakit"]; ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
+                                                        <img class="img-fluid rounded mt-2 w-25" src="images/penyakit/<?php echo $k['img_penyakit']; ?>" alt="">
+                                                    </a>
                                                 </td>
                                             </tr>
                                             <tr>
