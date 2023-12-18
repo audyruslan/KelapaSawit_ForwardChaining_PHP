@@ -81,7 +81,7 @@
                   <th>Nama</th>
                   <th>No.HP</th>
                   <th>Penyakit</th>
-                  <th width="1%">Detail</th>
+                  <th width="6%">Detail</th>
                 </tr>
               </thead>
               <tbody>
@@ -210,8 +210,8 @@
 
                   </td>
                   <td>
-                    <a class="btn btn-sm btn-primary" href="index_detail.php?id=<?php echo $d['user_id']; ?>"> DETAIL</a>
-                    <a class="btn btn-sm btn-info" href="index_hapus.php?id=<?php echo $d['user_id']; ?>"> <i data-feather="trash"></i></a>
+                    <a class="btn btn-sm btn-primary" title="detail" href="index_detail.php?id=<?php echo $d['user_id']; ?>"> <i class="fa fa-info"></i></a>
+                    <a class="btn btn-sm btn-info" title="delete" href="index_hapus.php?id=<?php echo $d['user_id']; ?>"> <i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
               <?php } ?>

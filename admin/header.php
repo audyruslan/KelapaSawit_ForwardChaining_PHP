@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="../assets/DataTables/datatables.min.css" />
   <link rel="stylesheet" href="../assets/css/summernote.min.css">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 
   <style>
     .bd-placeholder-img {

@@ -10,15 +10,24 @@
                 <li><a href="index.php">Home</a></li>
                 <li>Diagnosa</li>
             </ol>
-            <h2>Diagnosa</h2>
-            <p class="text-dark">Jawab pertanyaan berikut sesuai dengan yang terjadi pada tanaman kelapa sawit anda.</p>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h2>Diagnosa</h2>
+                    <p class="text-dark">Jawab pertanyaan berikut sesuai dengan yang terjadi pada tanaman kelapa sawit
+                        anda.</p>
+                    <!-- Menambahkan tombol Kembali -->
+                </div>
+                <div>
+                    <a href="javascript:history.back()" class="btn btn-link btn-lg fw-bold">Kembali</a>
+                </div>
+            </div>
         </div>
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
         <div class="container">
 
-           <?php 
+            <?php 
                                     // cek jika pertanyaan pertama
            if(isset($_GET['gejala'])){
             $gejala = $_GET['gejala'];
@@ -40,33 +49,39 @@
 
                         <input type="hidden" name="id_user" value="<?php echo $_GET['id']; ?>">
                         <input type="hidden" name="inisial" value="<?php echo $pp['gej_inisial']; ?>">
-                        <h1 class="mb-5 text-dark"> <?php echo $pp['gej_inisial']; ?> - <?php echo $pp['gej_nama']; ?> ? </h1>
+                        <h1 class="mb-5 text-dark"> <?php echo $pp['gej_inisial']; ?> - <?php echo $pp['gej_nama']; ?> ?
+                        </h1>
 
                         <br>
 
                     </div>
 
                     <div class="col-md-6 text-center">
-                        <button class="btn btn-success btn-lg fw-bold text-white mt-5 w-50" name="jawaban" value="1">YA</button>
+                        <button class="btn btn-success btn-lg fw-bold text-white mt-5 w-50" name="jawaban"
+                            value="1">YA</button>
                     </div>
 
                     <div class="col-md-6 text-center">
-                        <button class="btn btn-danger btn-lg fw-bold text-white mt-5 w-50" name="jawaban" value="0">TIDAK</button>
+                        <button class="btn btn-danger btn-lg fw-bold text-white mt-5 w-50" name="jawaban"
+                            value="0">TIDAK</button>
                     </div>
 
                     <div class="col-md-12">
 
                         <center>
-                            <br>            
-                            <br>            
                             <br>
-                            <a href="diagnosa_hasil2.php?id_user=<?php echo $_GET['id']; ?>" class="btn btn-info btn-lg px-5" style="text-decoration: none;font-size: 12pt;font-weight: bold;padding: 15px 30px">SELESAIKAN JAWABAN</a>
+                            <br>
+                            <br>
+                            <a href="diagnosa_hasil2.php?id_user=<?php echo $_GET['id']; ?>"
+                                class="btn btn-info btn-lg px-5"
+                                style="text-decoration: none;font-size: 12pt;font-weight: bold;padding: 15px 30px">SELESAIKAN
+                                JAWABAN</a>
                         </center>
 
                     </div>
 
                 </div>
-            </form> 
+            </form>
 
             <?php
         }else{
@@ -81,7 +96,7 @@
             while($ker=mysqli_fetch_array($alternatif)){
                 ?>
 
-                <?php 
+            <?php 
                 $xx = 0;
                                             // id alternatif
                 $id_ker = $ker['alt_id'];
@@ -97,7 +112,7 @@
                 array_push($rule, $rule2);
                 ?>
 
-                <?php 
+            <?php 
                                             // membuat array alternatif
                 $_SESSION['alternatif'][$no] = $ker['alt_id'];
                 $no++;
@@ -130,32 +145,35 @@
 
                         <input type="hidden" name="id_user" value="<?php echo $_GET['id']; ?>">
                         <input type="hidden" name="inisial" value="<?php echo $pp['gej_inisial']; ?>">
-                        <h1 class="mb-5 text-dark"><?php echo $pp['gej_inisial']; ?> - <?php echo $pp['gej_nama']; ?> ?</h1>
+                        <h1 class="mb-5 text-dark"><?php echo $pp['gej_inisial']; ?> - <?php echo $pp['gej_nama']; ?> ?
+                        </h1>
                         <br>
 
                     </div>
 
                     <div class="col-md-6 text-center">
-                        <button class="btn btn-success btn-lg fw-bold text-white mt-5 w-50" name="jawaban" value="1">YA</button>
+                        <button class="btn btn-success btn-lg fw-bold text-white mt-5 w-50" name="jawaban"
+                            value="1">YA</button>
                     </div>
 
                     <div class="col-md-6 text-center">
-                        <button class="btn btn-danger btn-lg fw-bold text-white mt-5 w-50" name="jawaban" value="0">TIDAK</button>
+                        <button class="btn btn-danger btn-lg fw-bold text-white mt-5 w-50" name="jawaban"
+                            value="0">TIDAK</button>
                     </div>
 
                 </div>
-            </form>  
+            </form>
 
             <?php
         }
 
         ?>
 
-        <br>
-        <br>
-        <br>
-    </div>
-</section>
+            <br>
+            <br>
+            <br>
+        </div>
+    </section>
 
 </main><!-- End #main -->
 

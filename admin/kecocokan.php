@@ -161,7 +161,7 @@
                   <?php } ?>
 
                   <td>
-                    <a class="btn btn-sm btn-primary" href="kecocokan_edit.php?alternatif=<?php echo $ker['alt_id'];?>"><i class="fa fa-wrench"></i></a>
+                    <a class="btn btn-sm btn-primary" title="change" href="kecocokan_edit.php?alternatif=<?php echo $ker['alt_id'];?>"><i class="fa fa-wrench"></i></a>
                   </td>
 
                 </tr>

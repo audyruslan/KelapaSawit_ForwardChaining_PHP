@@ -24,7 +24,8 @@
   <link href="assets_depan/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets_depan/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets_depan/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets_depan/DataTables/DataTables-1.13.6/css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
 
   <!-- Template Main CSS File -->
   <link href="assets_depan/css/style.css" rel="stylesheet">

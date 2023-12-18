@@ -26,12 +26,11 @@
 
 <!-- Template Main JS File -->
 <script src="assets_depan/js/main.js"></script>
-<script type="text/javascript" src="assets_depan/DataTables/datatables.js"></script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#tableku').DataTable();
-  });
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
 </script>
 
 </body>

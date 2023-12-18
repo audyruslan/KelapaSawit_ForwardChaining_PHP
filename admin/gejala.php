@@ -19,15 +19,16 @@
         <div class="card-body">
 
           <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-
-              <tr>
-                <th class="text-center" width="1%">No</th>
-                <th class="text-center" width="10%">Kode</th>
-                <th class="text-center" width="40%">Nama Gejala</th>
-                <th class="text-center">Gambar Gejala</th>
-                <th class="text-center" width="12%">OPSI</th>
-              </tr>
+            <table class="table table-bordered table-hover" id="myTable">
+              <thead>
+                <tr>
+                  <th class="text-center" width="1%">No</th>
+                  <th class="text-center" width="10%">Kode</th>
+                  <th class="text-center" width="40%">Nama Gejala</th>
+                  <th class="text-center">Gambar Gejala</th>
+                  <th class="text-center" width="12%">OPSI</th>
+                </tr>
+              </thead>
 
               <?php
               $no = 1;
@@ -40,8 +41,8 @@
                   <td><?php echo $d['gej_nama'] ?></td>
                   <td class="text-center"><img class="img-fluid rounded w-50" src="../images/gejala/<?= $d["img_gejala"] ?>" alt="Gambar Gejala"></td>
                   <td class="text-center">
-                    <a class="btn btn-sm btn-primary" href="gejala_edit.php?id=<?php echo $d['gej_id']; ?>"><i class="fa fa-wrench"></i></a>
-                    <a class="btn btn-sm btn-info" href="gejala_hapus.php?id=<?php echo $d['gej_id']; ?>"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-sm btn-primary" title="change" href="gejala_edit.php?id=<?php echo $d['gej_id']; ?>"><i class="fa fa-wrench"></i></a>
+                    <a class="btn btn-sm btn-info" title="delete" href="gejala_hapus.php?id=<?php echo $d['gej_id']; ?>"><i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
               <?php

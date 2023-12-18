@@ -18,16 +18,18 @@
         <div class="card-body">
 
           <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-              <tr>
-                <th width="1%">No</th>
-                <th width="1%">Kode</th>
-                <th width="20%">Nama</th>
-                <th width="30%">Penyebab</th>
-                <th width="30%">Solusi</th>
-                <th width="30%">Gambar</th>
-                <th width="15%">OPSI</th>
-              </tr>
+            <table class="table table-bordered table-hover" id="myTable">
+              <thead>
+                <tr>
+                  <th width="1%">No</th>
+                  <th width="1%">Kode</th>
+                  <th width="20%">Nama</th>
+                  <th width="30%">Penyebab</th>
+                  <th width="30%">Solusi</th>
+                  <th width="30%">Gambar</th>
+                  <th width="15%">OPSI</th>
+                </tr>
+              </thead>
               <?php
               $no = 1;
               $data = mysqli_query($koneksi, "SELECT * FROM alternatif");
@@ -43,8 +45,8 @@
                     <img class="card-img-top" src="../images/penyakit/<?= $d["img_penyakit"] ?>" alt="Gambar Penyakit">
                   </td>
                   <td class="text-center">
-                    <a class="btn btn-sm btn-primary" href="alternatif_edit.php?id=<?php echo $d['alt_id']; ?>"><i class="fa fa-wrench"></i></a>
-                    <a class="btn btn-sm btn-info" href="alternatif_hapus.php?id=<?php echo $d['alt_id']; ?>"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-sm btn-primary mb-1" title="change" href="alternatif_edit.php?id=<?php echo $d['alt_id']; ?>"><i class="fa fa-wrench"></i></a>
+                    <a class="btn btn-sm btn-info" title="delete" href="alternatif_hapus.php?id=<?php echo $d['alt_id']; ?>"><i class="fa fa-trash"></i></a>
                   </td>
                 </tr>
               <?php

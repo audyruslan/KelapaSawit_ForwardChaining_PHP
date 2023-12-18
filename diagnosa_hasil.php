@@ -76,7 +76,26 @@
                             </table>
                         </div>
 
-
+                         <?php
+                                $hasil = $d['user_hasil'];
+                                // cek jika jawaban/hasil ada
+                                if (empty($hasil)) {
+                                ?>
+                                <table class="table table-bordered text-left">
+                                    <tr>
+                                        <th width="30%">HASIL <br /> <small>Forward Chaining</small></th>
+                                        <td><b><i>Penyakit tidak ditemukan karena gejala tidak dipilih.</i></b></td>
+                                    </tr>
+                                    <tr>
+                                        <th width="30%">PENYEBAB</th>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <th width="30%">SOLUSI</th>
+                                        <td>-</td>
+                                    </tr>
+                                </table>
+                                <?php } ?>
 
                         <?php
                         // array inputan user
@@ -178,15 +197,12 @@
                         ?>
 
                         <div class="table-responsive">
-
+                            
                             <table class="table table-bordered text-left">
-                                <?php
-                                $hasil = $d['user_hasil'];
+                                    <?php 
+                                if(!empty($hasil)) {    
 
-                                // cek jika jawaban/hasil ada
-                                if ($hasil != "0") {
-
-                                    // pecahkan jawaban berdasarkan tanda koma (multi alternatif)
+                                      // pecahkan jawaban berdasarkan tanda koma (multi alternatif)
                                     $h = explode(",", $hasil);
 
                                     for ($a = 0; $a < count($arr_hasil); $a++) {
@@ -204,7 +220,7 @@
                                                     // hitung persentase nya
                                                     $ada = $arr_hasil[$a]['ada'];
                                                     $jumlah = $arr_hasil[$a]['jumlah'];
-
+                                                    $tes = $ada / $jumlah;
                                                     $persen = $ada / $jumlah * 100;
 
                                                     // Tampilkan P , Penyakit, Persen
@@ -224,26 +240,25 @@
                                                 <th width="30%">SOLUSI</th>
                                                 <td><?php echo nl2br($k['alt_solusi']); ?> </td>
                                             </tr>
-
-                                    <?php
+                                            <tr>
+                                                <th width="30%">KESIMPULAN</th>
+                                                <td>
+                                                Berdasarkan dari gejala yang dipilih oleh pengguna dan berdasarkan Rules/Aturan
+                                                    yang
+                                                    sudah ditentukan maka perhitungan forward chaining
+                                                    mengambil nilai keyakinan dari gejala yang dipilih yakni
+                                                    <b><?= $tes; ?> (<?= round($persen, 2); ?>%)</b> yaitu
+                                                    <b><?= $k['alt_nama']; ?></b>
+                                                    <hr>
+                                                    <p class="mb-0">Presentasi = jumlah gejala yang dipilih / total keseluruhan gejala x 100% = <?= $ada; ?> / <?= $jumlah; ?> = <?= $tes; ?> x 100% = <?= round($persen, 2); ?> %
+                                                    Berdasarkan hasil
+                                                    perhitungan forward chaining, tingkat presentasi <?= $k['alt_nama']; ?> adalah <?= round($persen, 2); ?> %.
+                                                    <b><?= $k['alt_nama']; ?></b></p>
+                                                </td>
+                                            </tr>
+                                <?php
                                         }
                                     }
-                                } else {
-                                    // jika tidak ada, maka tampilkan sebagai berikut
-                                    ?>
-                                    <tr>
-                                        <th width="30%">HASIL <br /> <small>Forward Chaining</small></th>
-                                        <td><b><i>Penyakit tidak ditemukan.</i></b></td>
-                                    </tr>
-                                    <tr>
-                                        <th width="30%">PENYEBAB</th>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <th width="30%">SOLUSI</th>
-                                        <td>-</td>
-                                    </tr>
-                                <?php
                                 }
                                 ?>
                             </table>
